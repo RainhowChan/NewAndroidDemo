@@ -1,0 +1,17 @@
+<resources>
+
+    <!-- Base application theme. -->
+   <!-- <style name="AppTheme" parent="android:Theme.Light">
+        &lt;!&ndash; Customize your theme here. &ndash;&gt;
+        &lt;!&ndash;<item name="colorPrimary">#3F51B5</item>
+        <item name="colorPrimaryDark">#303F9F</item>
+        <item name="colorAccent">#FF4081</item>&ndash;&gt;
+    </style>-->
+    <style name="AppTheme" parent="android:Theme.Material.Light">
+       <item name="android:colorPrimary">@color/primary</item><!--标题栏颜色-->
+        <item name="android:colorPrimaryDark">@color/primary_dark</item><!--状态栏颜色-->
+        <!--   theme UI controls like checkboxes and text fields -->
+        <item name="android:colorAccent">@color/accent</item>
+        <item name="android:textColorPrimary">@android:color/black</item>
+    </style>
+</resources>
