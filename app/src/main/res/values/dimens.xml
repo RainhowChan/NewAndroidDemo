@@ -3,4 +3,10 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fad_size">5dp</dimen>
+    <dimen name="margin_max">15dp</dimen>
+    <dimen name="margin_middle">10dp</dimen>
+    <dimen name="margin_min">5dp</dimen>
+    <dimen name="margin_min_min">3dp</dimen>
+
+    <dimen name="actionBarSize">42dp</dimen>
 </resources>

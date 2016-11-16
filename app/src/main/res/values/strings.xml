@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">NestScroll</string>
     <string name="tt">dddd</string>
+
+    <string name="drawer_open">打开了</string>
+    <string name="drawer_close">关闭了</string>
+
+    <string name="range">排行</string>
+    <string name="report">举报</string>
+    <string name="cooperation">合作</string>
+    <string name="scan">浏览</string>
+    <string name="list">清单</string>
+
 </resources>

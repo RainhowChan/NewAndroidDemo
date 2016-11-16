@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/ab_search"
+        android:orderInCategory="80"
+        android:title="@string/range"
+        android:icon="@drawable/ic_userpage_contribute"
+        android:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_share"
+        android:orderInCategory="90"
+        android:title="@string/report"
+        android:icon="@drawable/ic_userpage_reportby"
+        app:actionProviderClass="android.support.v7.widget.ShareActionProvider"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/cooperation"
+        android:icon="@drawable/ic_userpage_reputation"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_service"
+        android:orderInCategory="110"
+        android:title="@string/scan"
+        android:icon="@drawable/ic_userpage_service"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_task"
+        android:orderInCategory="120"
+        android:title="@string/list"
+        android:icon="@drawable/ic_userpage_task"
+        app:showAsAction="never"/>
+</menu>

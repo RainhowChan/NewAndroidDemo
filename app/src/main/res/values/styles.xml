@@ -1,17 +1,53 @@
 <resources>
 
-    <!-- Base application theme. -->
-   <!-- <style name="AppTheme" parent="android:Theme.Light">
-        &lt;!&ndash; Customize your theme here. &ndash;&gt;
-        &lt;!&ndash;<item name="colorPrimary">#3F51B5</item>
-        <item name="colorPrimaryDark">#303F9F</item>
-        <item name="colorAccent">#FF4081</item>&ndash;&gt;
-    </style>-->
-    <style name="AppTheme" parent="android:Theme.Material.Light">
-       <item name="android:colorPrimary">@color/primary</item><!--标题栏颜色-->
-        <item name="android:colorPrimaryDark">@color/primary_dark</item><!--状态栏颜色-->
-        <!--   theme UI controls like checkboxes and text fields -->
-        <item name="android:colorAccent">@color/accent</item>
-        <item name="android:textColorPrimary">@android:color/black</item>
+    <style name="AppTheme" parent="AppBaseTheme">
+
+
     </style>
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary</item>
+        <item name="android:windowBackground">@android:color/darker_gray</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="searchViewStyle">@style/MySearchViewStyle</item>
+        <item name="actionBarSize">@dimen/actionBarSize</item>
+        <item name="drawerArrowStyle">@style/left_Drawer_Arrow_Style</item>
+        <item name="android:actionMenuTextAppearance">@style/WindowTitle</item>
+        <item name="actionOverflowButtonStyle">@style/OverflowButtonStyle</item>
+        <!-- 溢出菜单图标颜色-->
+        <item name="colorControlNormal">@android:color/white</item>
+        <item name="android:textAppearanceLargePopupMenu">@style/Overflow_Menu_Text_style</item>
+    </style>
+
+
+    <style name="MySearchViewStyle" parent="Widget.AppCompat.SearchView">
+
+    </style>
+
+    <style name="WindowTitle" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#fff</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <!-- 左边的箭头指示-->
+    <style name="left_Drawer_Arrow_Style" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+    <!-- 左边的箭头指示-->
+    <style name="left_Drawer_Arrow_normal_Style" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">false</item>
+        <item name="color">@android:color/white</item>
+    </style>
+
+    <!--溢出菜单文字样式-->
+    <style name="Overflow_Menu_Text_style" parent="@style/TextAppearance.AppCompat.Widget.PopupMenu.Large">
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="OverflowButtonStyle" parent="@android:style/Widget.ActionButton.Overflow">
+        <item name="android:src">@android:drawable/ic_menu_more</item>
+    </style>
+
 </resources>

@@ -2,4 +2,9 @@
     <color name="primary">#0c61a4</color>
     <color name="primary_dark">#fae</color>
     <color name="accent">#543dea</color>
+    <color name="yellow">#CECF02</color>
+    <color name="dark_gray">#ff808080</color>
+
+    <color name="content_word">#454343</color>
+
 </resources>
