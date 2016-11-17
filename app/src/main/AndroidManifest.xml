@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.rainhowchan.nestscroll">
-
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,6 +17,8 @@
         </activity>
         <activity android:name=".Second" />
         <activity android:name=".Third" />
+        <activity android:name=".MyNestedScrollView"/>
+        <activity android:name=".NestedScrollViewDemo"/>
     </application>
 
 </manifest>

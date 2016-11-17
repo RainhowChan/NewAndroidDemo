@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.rainhowchan.nestscroll.adapter.BaseRecyclerAdapter;
 import com.rainhowchan.nestscroll.adapter.RecyclerViewHolder;
 import com.rainhowchan.nestscroll.domain.Book;
+import com.rainhowchan.nestscroll.impl.RecyclerViewAutoScrollHelper;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -61,8 +62,10 @@ public class MainActivity extends AppCompatActivity {
                 return android.R.layout.simple_list_item_2;
             }
         };
+        RecyclerViewAutoScrollHelper helper = new RecyclerViewAutoScrollHelper(myRecyclerView);
+        myRecyclerView.setOnTouchListener(helper);
+        helper.setEnabled(true);
         myRecyclerView.setAdapter(adapter);
-
         adapter.setmClickListener(new BaseRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View itemView, int position) {
@@ -71,6 +74,10 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(new Intent(MainActivity.this, Second.class));
                 } else if (position == 1) {
                     startActivity(new Intent(MainActivity.this,Third.class));
+                } else if (position == 2) {
+                    startActivity(new Intent(MainActivity.this,MyNestedScrollView.class));
+                } else if (position == 3) {
+                    startActivity(new Intent(MainActivity.this,NestedScrollViewDemo.class));
                 }
             }
         });

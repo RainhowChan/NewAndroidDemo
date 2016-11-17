@@ -4,9 +4,42 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <include android:id="@+id/toolBar"
-
         layout="@layout/toolbar"/>
+    <com.rainhowchan.nestscroll.impl.MyPanelSlide
+        android:id="@+id/sliding_pane_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <FrameLayout
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/white">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/cooperation"/>
+            <LinearLayout
+                android:layout_width="64dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="64dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white"
+                    android:text="@string/report"/>
+                <!--<android.support.v4.widget.ContentLoadingProgressBar
+                    android:id="@+id/progress"
+                    style="?android:attr/progressBarStyleLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />-->
+            </LinearLayout>
 
+        </FrameLayout>
+        <ListView
+            android:id="@+id/lv"
+            android:layout_marginLeft="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </com.rainhowchan.nestscroll.impl.MyPanelSlide>
 
 
 </LinearLayout>

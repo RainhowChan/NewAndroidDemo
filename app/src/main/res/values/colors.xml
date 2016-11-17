@@ -7,4 +7,7 @@
 
     <color name="content_word">#454343</color>
 
+    <color name="purple">#722a9f</color>
+    <color name="blue">#47b2ec</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
 </resources>
