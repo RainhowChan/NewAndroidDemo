@@ -16,7 +16,9 @@
         <item name="actionOverflowButtonStyle">@style/OverflowButtonStyle</item>
         <!-- 溢出菜单图标颜色-->
         <item name="colorControlNormal">@android:color/white</item>
-        <item name="android:textAppearanceLargePopupMenu">@style/Overflow_Menu_Text_style</item>
+        <item name="android:textAppearanceLargePopupMenu">@style/Overflow_Menu_Text_style</item>\
+        <item name="colorAccent">@color/primary</item>
+        <item name="android:listDivider">@drawable/divider</item>
     </style>
 
 

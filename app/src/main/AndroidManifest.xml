@@ -19,6 +19,7 @@
         <activity android:name=".Third" />
         <activity android:name=".MyNestedScrollView"/>
         <activity android:name=".NestedScrollViewDemo"/>
+        <activity android:name=".ViewPageProActivity"/>
     </application>
 
 </manifest>

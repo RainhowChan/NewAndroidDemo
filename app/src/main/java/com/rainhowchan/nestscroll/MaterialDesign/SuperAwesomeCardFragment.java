@@ -16,9 +16,6 @@
 
 package com.rainhowchan.nestscroll.MaterialDesign;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.TypedValue;
@@ -38,7 +35,7 @@ public class SuperAwesomeCardFragment extends Fragment {
 
 	private int position;
 	private static final int[] drawables = { R.drawable.f, R.drawable.s, R.drawable.t, R.drawable.fo,
-			R.drawable.fi, R.drawable.fi, R.drawable.fi, R.drawable.fi };
+			R.drawable.fi, R.drawable.ic_company_bg, R.drawable.ic_company_center, R.drawable.ic_service_voucher_bg };
 
 	public static SuperAwesomeCardFragment newInstance(int position) {
 		SuperAwesomeCardFragment f = new SuperAwesomeCardFragment();
@@ -51,7 +48,6 @@ public class SuperAwesomeCardFragment extends Fragment {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
 		position = getArguments().getInt(ARG_POSITION);
 	}
 

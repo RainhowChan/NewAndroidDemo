@@ -10,5 +10,6 @@
     <string name="cooperation">合作</string>
     <string name="scan">浏览</string>
     <string name="list">清单</string>
+    <string name="hint_for_nodata">NOTHING!</string>
 
 </resources>

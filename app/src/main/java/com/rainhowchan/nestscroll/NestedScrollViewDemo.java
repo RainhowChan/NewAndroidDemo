@@ -185,7 +185,7 @@ public class NestedScrollViewDemo extends AppCompatActivity{
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.main1, menu);
 		/* ShareActionProvider配置 */
         mShareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(menu
                 .findItem(R.id.action_share));

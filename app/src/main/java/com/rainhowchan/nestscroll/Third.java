@@ -8,6 +8,7 @@ import android.support.v4.widget.ListViewAutoScrollHelper;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
@@ -52,6 +53,11 @@ public class Third extends AppCompatActivity {
         if (cursor != null) {
             startManagingCursor(cursor);
         }
+        ViewGroup parent = (ViewGroup) lv.getParent();
+        View emptyView = View.inflate(Third.this, R.layout.include_user_nodata, null);
+        parent.addView(emptyView,2);
+        lv.setEmptyView(emptyView);
+
         lv.setAdapter(new SimpleCursorAdapter(this,android.R.layout.simple_list_item_2,cursor,new String[]{ContactsContract.PhoneLookup.DISPLAY_NAME,ContactsContract.PhoneLookup._ID},new int[]{android.R.id.text1,android.R.id.text2}));
         stopManagingCursor(cursor);
 

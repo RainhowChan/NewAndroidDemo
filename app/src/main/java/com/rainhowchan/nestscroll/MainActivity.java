@@ -1,6 +1,7 @@
 package com.rainhowchan.nestscroll;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -19,6 +20,7 @@ import com.rainhowchan.nestscroll.adapter.BaseRecyclerAdapter;
 import com.rainhowchan.nestscroll.adapter.RecyclerViewHolder;
 import com.rainhowchan.nestscroll.domain.Book;
 import com.rainhowchan.nestscroll.impl.RecyclerViewAutoScrollHelper;
+import com.rainhowchan.nestscroll.util.RecycleViewDivider;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -53,19 +55,20 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             protected void bindData(RecyclerViewHolder holder, int position, Book book) {
-                holder.setText(android.R.id.text1, book.getName());
-                holder.setText(android.R.id.text2, String.valueOf(book.getPrice()));
+                holder.setText(R.id.text1, book.getName());
+                holder.setText(R.id.text2, String.valueOf(book.getPrice()));
             }
 
             @Override
             protected int getItemLayoutId(int viewType) {
-                return android.R.layout.simple_list_item_2;
+                return R.layout.listview_item_main;
             }
         };
         RecyclerViewAutoScrollHelper helper = new RecyclerViewAutoScrollHelper(myRecyclerView);
         myRecyclerView.setOnTouchListener(helper);
         helper.setEnabled(true);
         myRecyclerView.setAdapter(adapter);
+        myRecyclerView.addItemDecoration(new RecycleViewDivider(this,LinearLayoutManager.HORIZONTAL,10, Color.GRAY));
         adapter.setmClickListener(new BaseRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View itemView, int position) {
@@ -78,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(new Intent(MainActivity.this,MyNestedScrollView.class));
                 } else if (position == 3) {
                     startActivity(new Intent(MainActivity.this,NestedScrollViewDemo.class));
+                } else if (position == 4) {
+                    startActivity(new Intent(MainActivity.this,ViewPageProActivity.class));
                 }
             }
         });
@@ -96,14 +101,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
-
-
         return super.onMenuOpened(featureId, menu);
     }
 
     private void initDrawerLayout() {
-//        ActionBar actionBar = getSupportActionBar();
-//        actionBar.setDisplayHomeAsUpEnabled(true);
         ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this, drawer, toolBar, R.string.drawer_open, R.string.drawer_close);
         drawerToggle.syncState();
         drawer.setDrawerListener(drawerToggle);
