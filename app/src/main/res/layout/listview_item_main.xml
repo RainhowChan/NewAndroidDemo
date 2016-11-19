@@ -7,8 +7,8 @@
     <TextView
         android:id="@+id/text1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#c1b35d"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
         android:gravity="center"
         android:textColor="#262526"
         android:textSize="20sp" />
@@ -16,8 +16,8 @@
     <TextView
         android:id="@+id/text2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#dea4cf"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
         android:gravity="center"
         android:textColor="#262526"
         android:textSize="20sp" />

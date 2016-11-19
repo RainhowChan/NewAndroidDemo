@@ -9,7 +9,6 @@ import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.DisplayMetrics;
 import android.view.View;
 
 /**
@@ -42,7 +41,7 @@ public class RecycleViewDivider extends RecyclerView.ItemDecoration {
     }
 
     public RecycleViewDivider(Context context, int orientation, int dividerHeight, int dividerColor) {
-        this(context, orientation);
+        this.mOrientation=orientation;
         mDividerHeight=dividerHeight;
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setColor(dividerColor);

@@ -129,7 +129,5 @@ public class MyNestedScrollView extends AppCompatActivity {
         if (getCurrentFocus() != null) {
             ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
         }
-
-
     }
 }
