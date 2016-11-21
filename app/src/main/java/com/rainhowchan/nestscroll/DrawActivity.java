@@ -25,7 +25,7 @@ public class DrawActivity extends Activity {
         setContentView(R.layout.activity_draw);
         ButterKnife.bind(this);
 
-//        new Thread(cv).start();
+        new Thread(cv).start();
 
     }
 
