@@ -82,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(new Intent(MainActivity.this,NestedScrollViewDemo.class));
                 } else if (position == 4) {
                     startActivity(new Intent(MainActivity.this,ViewPageProActivity.class));
+                } else if (position == 5) {
+                    startActivity(new Intent(MainActivity.this,DrawActivity.class));
                 }
             }
         });

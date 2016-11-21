@@ -5,9 +5,12 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.graphics.Palette;
 import android.support.v7.graphics.PaletteItem;
 import android.support.v7.widget.CardView;
+import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import butterknife.Bind;
@@ -35,6 +38,20 @@ public class Second extends Activity {
         setContentView(R.layout.activity_second);
         ButterKnife.bind(this);
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.avator1);
+
+        cvSecond.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar snackBar = Snackbar.make(v, "是否撤销删除?", Snackbar.LENGTH_LONG);
+                snackBar.setAction("Yes", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                    }
+                });
+            }
+        });
+
+
 
         Palette.generateAsync(bitmap, new Palette.PaletteAsyncListener() {
             @Override

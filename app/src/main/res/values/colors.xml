@@ -4,8 +4,10 @@
     <color name="accent">#543dea</color>
     <color name="yellow">#CECF02</color>
     <color name="dark_gray">#ff808080</color>
+    <color name="window_background">#F5F5F5</color>
 
     <color name="content_word">#454343</color>
+    <color name="pink">#ed34a6</color>
 
     <color name="purple">#722a9f</color>
     <color name="blue">#47b2ec</color>

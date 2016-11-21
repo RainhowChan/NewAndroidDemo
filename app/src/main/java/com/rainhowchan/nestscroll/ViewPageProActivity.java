@@ -1,17 +1,14 @@
 package com.rainhowchan.nestscroll;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.PagerTabStrip;
-import android.support.v4.view.PagerTitleStrip;
-import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import java.util.ArrayList;
-import java.util.List;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -19,18 +16,14 @@ import butterknife.ButterKnife;
 /**
  * Created by Administrator on 2016/11/18.
  */
-public class ViewPageProActivity extends Activity {
+public class ViewPageProActivity extends AppCompatActivity {
 
-    @Bind(R.id.pts)
-    PagerTitleStrip pts;
-    @Bind(R.id.viewpager)
-    ViewPager viewpager;
-    @Bind(R.id.pts1)
-    PagerTabStrip pts1;
-    @Bind(R.id.viewpager1)
-    ViewPager viewpager1;
-    private List<View> viewList;
-    private List<String> titleList;
+    @Bind(R.id.toolbar)
+    Toolbar toolbar;
+    @Bind(R.id.nv)
+    NavigationView nv;
+    @Bind(R.id.drawer_view)
+    DrawerLayout drawerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,54 +31,41 @@ public class ViewPageProActivity extends Activity {
         setContentView(R.layout.activity_viewpagepro);
         ButterKnife.bind(this);
 
-        initViewPager();
+        setSupportActionBar(toolbar);
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        setupDrawerContent(nv);
     }
 
-    private void initViewPager() {
-        LayoutInflater inflater = getLayoutInflater();
-        viewList = new ArrayList<>();
-        viewList.add(inflater.inflate(R.layout.view_item1, null));
-        viewList.add(inflater.inflate(R.layout.view_item2, null));
-        viewList.add(inflater.inflate(R.layout.view_item3, null));
+    private void setupDrawerContent(NavigationView navigationView) {
+        navigationView.setNavigationItemSelectedListener(
+            new NavigationView.OnNavigationItemSelectedListener() {
+                private MenuItem mPreMenuItem;
+                @Override
+                public boolean onNavigationItemSelected(MenuItem menuItem) {
+                    if(mPreMenuItem!=null) mPreMenuItem.setChecked(false);
+                    menuItem.setChecked(true);
+                    drawerView.closeDrawers();
+                    mPreMenuItem=menuItem;
+                    return true;
+                }
+            });
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_drawer, menu);
+        return true;
+    }
 
-        titleList = new ArrayList<>();
-        titleList.add("RainhowChan");
-        titleList.add("LiYaqin");
-        titleList.add("zhy");
-
-        PagerAdapter adapter = new PagerAdapter() {
-            @Override
-            public int getCount() {
-                return viewList.size();
-            }
-
-            @Override
-            public boolean isViewFromObject(View view, Object object) {
-                return view == object;
-            }
-
-            @Override
-            public Object instantiateItem(ViewGroup container, int position) {
-                View view = viewList.get(position);
-                container.addView(view);
-                return view;
-            }
-
-            @Override
-            public void destroyItem(ViewGroup container, int position, Object object) {
-                container.removeView((View) object);
-            }
-
-            @Override
-            public CharSequence getPageTitle(int position) {
-                return titleList.get(position);
-            }
-        };
-        pts1.setTabIndicatorColorResource(R.color.yellow);
-        pts1.setDrawFullUnderline(true);
-//        viewpager.setAdapter(adapter);
-        viewpager1.setAdapter(adapter);
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+//            drawerView.openDrawer(GravityCompat.START);
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

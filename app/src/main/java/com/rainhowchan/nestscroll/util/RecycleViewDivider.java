@@ -41,7 +41,7 @@ public class RecycleViewDivider extends RecyclerView.ItemDecoration {
     }
 
     public RecycleViewDivider(Context context, int orientation, int dividerHeight, int dividerColor) {
-        this.mOrientation=orientation;
+        this(context, orientation);
         mDividerHeight=dividerHeight;
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setColor(dividerColor);

@@ -20,6 +20,7 @@
         <activity android:name=".MyNestedScrollView"/>
         <activity android:name=".NestedScrollViewDemo"/>
         <activity android:name=".ViewPageProActivity"/>
+        <activity android:name=".DrawActivity"/>
     </application>
 
 </manifest>
