@@ -1,13 +1,9 @@
 package com.rainhowchan.nestscroll;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 
 import com.rainhowchan.nestscroll.view.CircleView;
-import com.rainhowchan.nestscroll.view.CustomView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

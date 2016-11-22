@@ -4,9 +4,11 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 
 import com.rainhowchan.nestscroll.util.MeasureUtil;
@@ -15,7 +17,7 @@ import com.rainhowchan.nestscroll.util.MeasureUtil;
  * Created by Administrator on 2016/11/21.
  */
 
-public class CircleView extends View implements Runnable{
+public class CircleView extends View implements Runnable {
 
     private Paint paint;
     private Context context;
@@ -24,7 +26,7 @@ public class CircleView extends View implements Runnable{
     private int centerWidth;
     private int centerHeight;
     private RectF rect;
-    private int startAngle=0;
+    private int startAngle = 0;
 
     public CircleView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -50,18 +52,17 @@ public class CircleView extends View implements Runnable{
         DisplayMetrics screenSize = MeasureUtil.getScreenSize((Activity) context);
         int width = screenSize.widthPixels;
         int height = screenSize.heightPixels;
-        centerWidth=width / 2;
-        centerHeight=height/2;
+        centerWidth = width / 2;
+        centerHeight = height / 2;
         rect = new RectF(centerWidth - (innearCircle + 1 + ringWidth / 2), centerHeight - (innearCircle + 1 + ringWidth / 2),
-                centerWidth - (innearCircle + 1 + ringWidth / 2), centerHeight - (innearCircle + 1 + ringWidth / 2));
+                centerWidth + (innearCircle + 1 + ringWidth / 2), centerHeight + (innearCircle + 1 + ringWidth / 2));
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
-
-        paint.setARGB(255,138,43,226);
+        paint.setARGB(255, 138, 43, 226);
         paint.setStrokeWidth(2);
-        canvas.drawCircle(centerWidth, centerHeight, innearCircle , paint);
+        canvas.drawCircle(centerWidth, centerHeight, innearCircle, paint);
 
         paint.setARGB(255, 138, 43, 0);
         paint.setStrokeWidth(ringWidth);
@@ -70,26 +71,28 @@ public class CircleView extends View implements Runnable{
         //绘制外圆
         this.paint.setARGB(255, 138, 43, 226);
         this.paint.setStrokeWidth(2);
-        canvas.drawCircle(centerWidth, centerHeight, innearCircle + ringWidth+1, this.paint);
+        canvas.drawCircle(centerWidth, centerHeight, innearCircle + ringWidth + 1, this.paint);
 
+//        canvas.drawRect(rect,paint);
+        this.paint.setStrokeWidth(ringWidth);
+        this.paint.setARGB(255, 255, 0, 0);
+        canvas.drawArc(rect, 180 + startAngle, 90, false, paint);
+        canvas.drawArc(rect, startAngle, 90, false, paint);
 
-        canvas.drawArc(rect,190+startAngle,90,false,paint);
-        canvas.drawArc(rect, 0+startAngle, 90, false, paint);
-
-        paint.setARGB(30, 127, 255, 212);
-        canvas.drawArc(rect, 90+startAngle, 90, false, paint);
-        canvas.drawArc(rect, 270+startAngle, 90, false, paint);
+        paint.setARGB(255, 0, 255, 0);
+        canvas.drawArc(rect, 90 + startAngle, 90, false, paint);
+        canvas.drawArc(rect, 270 + startAngle, 90, false, paint);
     }
 
 
     @Override
     public void run() {
         while (true) {
-            startAngle+=10;
-            if(startAngle == 180)
+            startAngle += 10;
+            if (startAngle >= 180)
                 startAngle = 0;
             try {
-                Thread.sleep(50);
+                Thread.sleep(1000);
                 postInvalidate();
             } catch (InterruptedException e) {
                 e.printStackTrace();
