@@ -2,15 +2,17 @@ package com.rainhowchan.nestscroll.view;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ColorMatrix;
 import android.graphics.Paint;
+import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
-import android.util.TypedValue;
 import android.view.View;
 
+import com.rainhowchan.nestscroll.R;
 import com.rainhowchan.nestscroll.util.MeasureUtil;
 
 /**
@@ -114,5 +116,4 @@ public class CustomView extends View implements Runnable{
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (dpValue * scale + 0.5f);
     }
-
 }

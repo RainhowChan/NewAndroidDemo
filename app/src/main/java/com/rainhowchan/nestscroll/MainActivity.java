@@ -84,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(new Intent(MainActivity.this,ViewPageProActivity.class));
                 } else if (position == 5) {
                     startActivity(new Intent(MainActivity.this,DrawActivity.class));
+                } else if (position == 6) {
+                    startActivity(new Intent(MainActivity.this,EraserActivity.class));
                 }
             }
         });

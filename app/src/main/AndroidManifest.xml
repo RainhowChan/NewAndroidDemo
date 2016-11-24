@@ -21,6 +21,7 @@
         <activity android:name=".NestedScrollViewDemo"/>
         <activity android:name=".ViewPageProActivity"/>
         <activity android:name=".DrawActivity"/>
+        <activity android:name=".EraserActivity"/>
     </application>
 
 </manifest>

@@ -14,8 +14,13 @@
         <attr name="pstsShouldExpand" format="boolean" />
         <attr name="pstsTextAllCaps" format="boolean" />
     </declare-styleable>
-    <declare-styleable name="CustomView">
-        <attr name="view_src" format="reference"/>
+    <declare-styleable name="roundProgress">
+        <attr name="roundColor" format="color"/>
+        <attr name="roundWidth" format="dimension" />
+        <attr name="percentTextColor" format="color" />
+        <attr name="percentTextSize" format="dimension" />
+        <attr name="roundProgressColor" format="color" />
+        <attr name="roundBackground" format="color" />
     </declare-styleable>
 
 

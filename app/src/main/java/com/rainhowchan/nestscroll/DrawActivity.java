@@ -14,7 +14,6 @@ import butterknife.ButterKnife;
 public class DrawActivity extends Activity {
     @Bind(R.id.cv)
     CircleView cv;
-    private int radiu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
