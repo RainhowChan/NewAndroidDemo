@@ -6,10 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import android.media.Image;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.view.View;
 import android.widget.ImageView;
 
 import com.rainhowchan.nestscroll.R;
@@ -71,7 +68,6 @@ public  class RoundProgress extends ImageView {
             paint.setStrokeWidth(0);
             paint.setColor(textColor);
             paint.setTextSize(textSize);
-            //        paint.setFakeBoldText(true);
             float textWidth = paint.measureText(progress + " %");
             canvas.drawText(progress + " %", center - textWidth / 2, center + textSize / 2, paint);
 

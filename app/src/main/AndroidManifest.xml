@@ -22,6 +22,7 @@
         <activity android:name=".ViewPageProActivity"/>
         <activity android:name=".DrawActivity"/>
         <activity android:name=".EraserActivity"/>
+        <activity android:name=".RXActivity"/>
     </application>
 
 </manifest>

@@ -71,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
         adapter.setmClickListener(new BaseRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View itemView, int position) {
-                Toast.makeText(MainActivity.this, "位置为 " + position, Toast.LENGTH_SHORT).show();
                 if (position == 0) {
                     startActivity(new Intent(MainActivity.this, Second.class));
                 } else if (position == 1) {
@@ -86,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(new Intent(MainActivity.this,DrawActivity.class));
                 } else if (position == 6) {
                     startActivity(new Intent(MainActivity.this,EraserActivity.class));
+                } else if (position == 7) {
+                    startActivity(new Intent(MainActivity.this,RXActivity.class));
                 }
             }
         });

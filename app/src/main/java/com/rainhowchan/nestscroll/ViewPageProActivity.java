@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.rainhowchan.nestscroll.view.CustomView;
 import com.rainhowchan.nestscroll.view.RoundProgress;
@@ -37,7 +38,6 @@ public class ViewPageProActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
-
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         setupDrawerContent(nv);
